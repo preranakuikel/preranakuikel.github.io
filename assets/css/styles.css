@@ -28,6 +28,7 @@ header .logo img {
 }
 
 header h1 {
+    flex: 1;
     font-size: 1.5rem;
     font-weight: bold;
 }
@@ -45,47 +46,49 @@ header nav ul li a {
     font-size: 1rem;
 }
 
-header nav ul li a:hover {
-    text-decoration: underline;
-}
-
 /* Hero Section */
 .hero {
+    position: relative; 
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    padding: 6rem 2rem;
-    background: url('../images/hero-bg.jpg') no-repeat center center / cover;
-    color: white;
-    position: relative;
-    height: 400px;
+    padding: 3em;
+    color: white; 
 }
 
 .hero::before {
-    content: "";
+    content: ""; /* Required for pseudo-elements */
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.25);
-    z-index: -1;
+    background: url('../images/hero-bg.jpg') no-repeat center center / cover;
+    opacity: 0.25;
+    z-index: -1; 
 }
 
-.hero h2 {
-    font-size: 3rem;
+
+.hero-content {
+    flex: 3;
+    padding-right: 2em;
+    text-align: center;
+    color: rgb(18, 17, 17);
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
     margin-bottom: 1rem;
     color: #4CAF50;
 }
 
-.hero p {
+.hero-content p {
     font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
+    margin-bottom: 2rem;
+    color: #000000;
 }
 
-.hero .btn {
+.hero-content .btn {
     background-color: #4CAF50;
     color: white;
     padding: 0.8em 1.5em;
@@ -93,85 +96,616 @@ header nav ul li a:hover {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    margin-top: 1rem;
 }
 
-.hero .btn:hover {
+.hero-content .btn:hover {
     background-color: #3E8E41;
 }
 
-/* Section Headings */
-section h2 {
-    font-size: 2rem;
-    color: #4CAF50;
-    margin-bottom: 1.5rem;
+.hero-image {
+    flex: 2;
     text-align: center;
 }
 
-/* Essentials Section */
-.essentials-section {
-    padding: 3rem 2rem;
-    background-color: #fff;
-    text-align: center;
+.hero-image img {
+    width: 90%;
+    /* border-radius: 10px; */
+
 }
 
-.essentials-section table {
+.offerings {
+    position: relative; 
+    padding: 4em 3em;
+    text-align: left;
+    color: white; 
+    overflow: hidden; 
+}
+
+.offerings::before {
+    content: ""; /* Required for pseudo-elements */
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    border-collapse: collapse;
-    margin: 2rem auto;
+    height: 100%;
+    background: url('../images/what-we-offer-bg.jpg') no-repeat center center / cover;
+    opacity: 0.15; 
+    z-index: -1; 
 }
 
-.essentials-section thead th {
+
+.offerings h2 {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: #0e0f0e;
+}
+
+.offer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+}
+
+.offer {
+    padding: 2em;
+    border-radius: 10px;
+}
+
+.offer h3 {
+    font-size: 1.5rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.offer p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.offer .btn {
     background-color: #4CAF50;
     color: white;
-    padding: 1rem;
+    padding: 0.5em 1em;
     font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
 }
 
-.essentials-section tbody td {
-    padding: 1rem;
-    border: 1px solid #ddd;
-    font-size: 1rem;
-    text-align: left;
+.offer .btn:hover {
+    background-color: #3E8E41;
 }
 
-/* Additional Items Section */
-.additional-items {
-    padding: 3rem 2rem;
-    background-color: #f9f9f9;
-    text-align: left;
-}
-
-.additional-items h2 {
-    margin-bottom: 1.5rem;
-}
-
-.additional-items .packing-tips {
-    list-style-type: disc;
-    margin-left: 2rem;
-}
-
-.additional-items-grid {
+/* Exclusive Section */
+.exclusive {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     gap: 2rem;
-    justify-content: center;
-    margin-top: 1rem;
+    padding: 2rem 2rem;
+    background-color: #ffffff; /* Light gray background */
 }
 
-.additional-items-grid p {
+.exclusive-content {
+    flex: 1;
+    padding-right: 2rem; /* Add spacing between text and image */
+}
+
+.exclusive-content h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #212121; /* Dark text color */
+}
+
+.exclusive-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444; /* Subtle gray for text */
+}
+
+
+.exclusive-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.exclusive-img img {
+    width: 80%;
+    max-width: 500px; /* Limit the maximum width of the image */
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+/* A Moment of Discovery Section */
+.moment-of-discovery {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 2rem;
+    background-color: #ebe6e6; /* Light gray background */
+}
+
+.discovery-content {
+    flex: 1;
+    padding-right: 2rem; /* Add spacing between text and image */
+}
+
+.discovery-content h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #212121; /* Dark text color */
+}
+
+.discovery-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #444; /* Subtle gray for text */
+}
+
+.discovery-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.discovery-image img {
+    width: 80%;
+    max-width: 500px; /* Limit the maximum width of the image */
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+/* Why Us Section */
+.why-us {
+    padding: 3em;
     text-align: center;
+    background-color: #ffffff;
+}
+
+.why-us h2 {
+    font-size: 2rem;
+  
+    color: #4CAF50;
+}
+
+.why-us p {
     font-size: 1.2rem;
+    margin-bottom: 2em;
+}
+
+.centered-images {
+    display: flex;
+    justify-content: center;
+    gap: 2em;
+}
+
+.centered-images img {
+    max-width: 20%;
+    border-radius: 10px;
+}
+
+
+/* Trusted Partner Section */
+.trusted-partner {
+    background-color: #f4f0f0; /* Light gray background */
+    padding: 3rem 2rem;
+}
+
+.trusted-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Ensure content and buttons align */
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
+    gap: 1rem; /* Add spacing between elements */
+    max-width: 1200px;
+    margin: 0 auto; /* Center container */
+}
+
+.trusted-container p {
+    flex: 2; /* Allow the text to take more space */
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: #212121; /* Dark text color */
+    margin: 0;
+    line-height: 1.6;
+}
+
+.trusted-buttons {
+    flex: 1; /* Allow buttons to take some space */
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.trusted-buttons .btn-primary {
+    background-color: #007bff; /* Blue button */
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.trusted-buttons .btn-primary:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.trusted-buttons .btn-secondary {
+    background-color: transparent;
+    color: #007bff; /* Blue text */
+    border: 1px solid #007bff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.trusted-buttons .btn-secondary:hover {
+    background-color: #007bff; /* Blue background on hover */
+    color: white;
+}
+
+
+/* Footer Section */
+footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    background-color: #fff; /* White background */
+    color: #444; /* Subtle gray text */
+}
+
+.footer-links ul {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 1rem 0;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: #212121; /* Dark text color */
+    font-weight: bold;
+}
+
+.footer-links ul li a:hover {
+    text-decoration: underline;
+}
+
+footer hr {
+    border: 0.5px solid #000000;
+    margin: 1rem 0;
+}
+
+footer p {
+    margin: 0;
+    color: #666; /* Slightly lighter gray */
+}
+
+
+
+footer .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-bottom: 1em;
+}
+
+footer .social-media a {
+    color: white;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+
+/* ============================================ */
+/* TOURS STYLES */
+/* ============================================ */
+
+
+/* Hero Section */
+.hero {
+    padding: 6rem 2rem; 
+    text-align: center;
+    background: url('../images/tours_hero.jpg') no-repeat center center / cover;
+    position: relative;                           
+    height: 400px;                                                    
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    color: #fff; 
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(254, 254, 254, 0.1); 
+    z-index: 1; 
+}
+
+.hero-content {
+    position: relative; 
+    z-index: 2; 
+    text-align: center;
+    color: rgb(244, 100, 100);
+}
+
+.hero h2 {
+    font-size: 3rem; 
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.5;
+}
+
+
+.hero h2 {
+    color: #4caf50;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: rgb(243, 151, 151);
+}
+
+/* Luxury Escapes */
+.luxury-escapes {
+    padding: 4rem 2rem;
+}
+
+.luxury-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.luxury-content .text {
     flex: 1;
 }
 
-blockquote {
-    margin-top: 2rem;
-    font-style: italic;
-    text-align: center;
-    color: #555;
+.luxury-content .images img {
+    width: 48%;
+    margin-top: 1rem;
 }
 
-/* Contact Us Section */
+.luxury-content .card {
+    flex: 1;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 1.5rem;
+    border-radius: 8px;
+}
+
+/* Luxury Escapes Section */
+.luxury-escapes {
+    padding: 4rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* Optional background for contrast */
+}
+
+.luxury-card {
+    max-width: 400px; /* Constrain the card width */
+    background: #ffffff; /* White card background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a soft shadow */
+    border-radius: 8px; /* Rounded corners for the card */
+    overflow: hidden; /* Ensures the image doesn't overflow the card */
+    text-align: left;
+    border: 1px solid #eaeaea; /* Add a subtle border */
+}
+
+.luxury-card img {
+    width: 100%; /* Image should take the full width of the card */
+    height: 200px; /* Maintain image aspect ratio */
+    display: block;
+}
+
+.luxury-content {
+    padding: 1.5rem; /* Add spacing inside the card */
+}
+
+.luxury-content h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #333333;
+}
+
+.luxury-content p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555555;
+}
+
+
+
+/* Partner Section */
+.partner {
+    text-align: center;
+    background: #f9f9f9;
+    padding: 2rem;
+    font-size: 1.2rem;
+}
+
+/* Adventure Section */
+.adventure {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.adventure-images {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.adventure-images img {
+    width: calc(33.333% - 4rem);
+    height: auto;
+}
+
+.famous-sites ol {
+    flex: 1; /* Allow the list to take up equal space */
+    font-size: 1.2rem; /* Adjust font size for readability */
+    line-height: 1.8; /* Add spacing between list items */
+    margin: 0;
+    padding-left: 2rem; /* Add padding for indentation */
+}
+
+
+/* A Moment of Discovery Section */
+.famous-sites {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2rem 2rem;
+}
+
+.sites {
+    flex: 1;
+    padding-right: 2rem; 
+}
+
+.famous-sites h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    color: #212121; /* Dark text color */
+}
+
+
+.famoussite-img {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.famoussite-img img {
+    width: 50%;
+    border-radius: 5px; /* Optional: Rounded corners */
+}
+
+
+/* About Us Page */
+
+/* Hero Section */
+.about-hero {
+    text-align: center;
+    background-color: #f9f9f9;
+    padding: 4rem 2rem;
+}
+
+.about-hero img {
+    max-width: 150px;
+    margin: 1rem auto;
+}
+
+.about-hero h2 {
+    font-size: 2.5rem;
+    color: #4CAF50;
+}
+
+/* About Us Section */
+.about-us {
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+}
+
+.about-us h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #212121;
+}
+
+.about-us p {
+    font-size: 1.2rem;
+    color: #555555;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+/* Mission & Vision Section */
+.mission-vision {
+    display: flex;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    justify-content: center;
+}
+
+.mission, .vision {
+    flex: 1;
+    background-color: #f9f9f9;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mission h3, .vision h3 {
+    font-size: 1.8rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.mission p, .vision p {
+    font-size: 1rem;
+    color: #555555;
+    line-height: 1.6;
+}
+
+/* Footer Section */
+footer {
+    padding: 2rem 1rem;
+    text-align: center;
+    color: white;
+}
+
+footer .social-media {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+footer .social-media a {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+
+/* Contact Us Hero Section */
 .contact-hero {
     display: flex;
     align-items: center;
@@ -206,16 +740,35 @@ blockquote {
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    text-transform: uppercase;
 }
 
 .contact-hero-content .btn-orange:hover {
     background-color: #e69500;
 }
 
+.contact-hero-image img {
+    width: 80%;
+    max-width: 400px;
+}
+
+/* Contact Form Section */
 .contact-form-section {
     text-align: center;
     padding: 4rem 2rem;
     background-color: #fff;
+}
+
+.contact-form-section h2 {
+    font-size: 2rem;
+    color: #4CAF50;
+    margin-bottom: 1rem;
+}
+
+.contact-form-section p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #212121;
 }
 
 .contact-form {
@@ -250,55 +803,132 @@ blockquote {
     background-color: #0056b3;
 }
 
-/* Footer */
-footer {
-    padding: 2rem 1rem;
+/* Contact Info Section */
+.contact-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    padding: 4rem 2rem;
+    background-color: #f9f9f9;
+}
+
+.contact-info .info {
+    flex: 1;
+    font-size: 1.2rem;
+    color: #212121;
+}
+
+.contact-info .map img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 5px;
+}
+
+
+/* Hero Section */
+.hero {
     text-align: center;
+    padding: 4rem 2rem;
+    background: url('../images/what-to-pack-hero.jpg') no-repeat center center / cover;
+    color: white;
+}
+.hero-pack {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: url('../images/woman-bubling.png') no-repeat center center;
+    color: white;
+}
+
+.hero h2 {
+    font-size: 3rem;
+    color: #4CAF50;
+}
+
+.hero h3 {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+/* Essentials Table Section */
+.essentials-section {
+    padding: 3rem 2rem;
+    text-align: center;
+    background-color: #fff;
+}
+
+.essentials-section h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem auto;
+}
+
+thead th {
     background-color: #4CAF50;
     color: white;
-}
-
-footer .social-media {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-    margin-bottom: 1rem;
-}
-
-footer .social-media a {
-    color: white;
-    font-size: 1.5rem;
-    text-decoration: none;
-}
-
-footer hr {
-    margin: 2rem 0;
-    border: 1px solid white;
-}
-
-footer p {
-    margin: 0;
+    padding: 1rem;
     font-size: 1rem;
 }
 
-/* Utility Classes */
-.flex {
+tbody td {
+    padding: 1rem;
+    border: 1px solid #ddd;
+    text-align: left;
+    font-size: 1rem;
+}
+
+/* Additional Items Section */
+.additional-items {
+    padding: 3rem 2rem;
+    text-align: left;
+    background-color: #f9f9f9;
+}
+
+.additional-items h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #4CAF50;
+}
+
+.packing-tips {
+    list-style-type: disc;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.additional-items-grid {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+    justify-content: space-around;
+    margin-top: 1rem;
 }
 
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.center {
+.additional-items-grid p {
     text-align: center;
+    font-size: 1.2rem;
 }
 
-.rounded {
-    border-radius: 8px;
+blockquote {
+    margin-top: 2rem;
+    font-style: italic;
+    text-align: center;
+    color: #555;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: #000000;
 }
