@@ -417,7 +417,7 @@ footer p {
 
 
 /* Hero Section */
-.hero {
+.hero-tours {
     padding: 6rem 2rem; 
     text-align: center;
     background: url('../images/tours_hero.jpg') no-repeat center center / cover;
