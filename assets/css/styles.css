@@ -748,9 +748,10 @@ footer .social-media a {
 }
 
 .contact-hero-image img {
-    width: 80%;
-    max-width: 400px;
+    width: 100%;
+    height: 350px;
 }
+
 
 /* Contact Form Section */
 .contact-form-section {
