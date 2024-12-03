@@ -901,33 +901,42 @@ tbody td {
 /* Additional Items Section */
 .additional-items {
     padding: 3rem 2rem;
-    text-align: left;
     background-color: #f9f9f9;
 }
 
 .additional-items h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #4CAF50;
+    margin-bottom: 1.5rem;
+    color: #040404;
+    text-align: left;
+}
+
+.additional-content {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.column {
+    flex: 1;
+    min-width: 250px; /* Adjust as needed for responsiveness */
 }
 
 .packing-tips {
     list-style-type: disc;
-    margin-left: 2rem;
-    margin-bottom: 2rem;
-}
-
-.additional-items-grid {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 1rem;
+    margin-left: 1rem;
+    font-size: 1rem;
 }
 
 .additional-items-grid p {
-    text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin-bottom: 1rem;
 }
 
+.additional-items-grid p  {
+    display: block;
+    margin-bottom: 0.5rem;
+}
 blockquote {
     margin-top: 2rem;
     font-style: italic;
